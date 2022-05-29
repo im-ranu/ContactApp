@@ -126,7 +126,9 @@ Link : https://identity.nexmo.com/login
 
 Room database is used to store all message sent successfully through application.
 Database name is “message_database”
+
 Table Schema : 
+
 ![Database](screenshot/Image10.png)
 
 
