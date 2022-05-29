@@ -1,9 +1,6 @@
 package com.kisannetwork.contactsapp.data
 
 import android.content.Context
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.kisannetwork.contactsapp.data.models.Contact
@@ -12,8 +9,22 @@ import com.kisannetwork.contactsapp.database.AppDatabase
 import com.kisannetwork.contactsapp.extentions.Utils
 import org.json.JSONObject
 
+
+
+
+
 class Repository(private val context: Context) {
 
+   companion object{
+       private var INSTANCE: Repository? = null
+       fun getInstance(context: Context): Repository? {
+           if (INSTANCE == null) {
+               INSTANCE = Repository(context)
+           }
+           return INSTANCE
+       }
+
+   }
 
     fun getContactList(fileName : String):ArrayList<Contact> {
         val jsonFromAssets = Utils.loadJSONFromAssets(context, fileName)

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.kisannetwork.contactsapp.data.Repository
 import com.kisannetwork.contactsapp.data.models.Contact
 import com.kisannetwork.contactsapp.databinding.FragmentContactlistBinding
 import com.kisannetwork.contactsapp.extentions.Constants
@@ -26,9 +27,9 @@ class ContactListFragment : Fragment() {
     var contactList = ArrayList<Contact>()
     var adapter : ContactAdapter? = null
     var layoutManager : LinearLayoutManager? = null
-    var listState: Parcelable? = null
-    private val contactListViewModel: ContactListViewModel by viewModels { ContactListViewModelFactory(this.context?.applicationContext
-        ?: requireContext()) }
+    var repository : Repository? =null
+    private val contactListViewModel: ContactListViewModel
+    by viewModels { ContactListViewModelFactory(repository ?: Repository(this.requireContext())) }
 
     override fun onCreateView(
         inflater: LayoutInflater,

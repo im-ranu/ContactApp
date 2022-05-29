@@ -11,7 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class ContactListViewModel(context: Context) : BaseViewModel() {
+class ContactListViewModel(repository: Repository) : BaseViewModel() {
 
 
     var contactList = MutableLiveData<ArrayList<Contact>>()
@@ -24,7 +24,7 @@ class ContactListViewModel(context: Context) : BaseViewModel() {
         }
 
     init {
-        repository  = Repository(context)
+        this.repository  = repository
     }
 
 

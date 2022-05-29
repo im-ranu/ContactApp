@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.kisannetwork.contactsapp.data.Repository
 import com.kisannetwork.contactsapp.data.models.Message
 import com.kisannetwork.contactsapp.databinding.FragmentOtpListBinding
 import com.kisannetwork.contactsapp.ui.home.OTPListViewModel
@@ -19,8 +20,9 @@ class OTPListFragment : Fragment() {
     var mBinding : FragmentOtpListBinding? =null
     var otpList = ArrayList<Message>()
     var adapter : MessageAdapter? = null
-    private val otpListViewModel: OTPListViewModel by viewModels { OTPListViewModelFactory(this.context?.applicationContext
-        ?: requireContext()) }
+    var repository:Repository? = null
+    private val otpListViewModel: OTPListViewModel
+    by viewModels { OTPListViewModelFactory(repository ?: Repository(this.requireContext())) }
 
     override fun onCreateView(
         inflater: LayoutInflater,

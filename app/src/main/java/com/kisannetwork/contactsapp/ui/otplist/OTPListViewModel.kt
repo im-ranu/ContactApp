@@ -12,7 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class OTPListViewModel(context: Context) : BaseViewModel() {
+class OTPListViewModel(repository: Repository) : BaseViewModel() {
 
 
     var otpList = MutableLiveData<ArrayList<Message>>()
@@ -22,7 +22,7 @@ class OTPListViewModel(context: Context) : BaseViewModel() {
 
 
     init {
-        repository  = Repository(context)
+        this.repository  = repository
     }
 
 
