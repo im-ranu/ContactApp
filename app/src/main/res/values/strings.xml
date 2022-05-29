@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Kisan</string>
+    <string name="first_tab_text">List</string>
+    <string name="second_tab_text">OTP</string>
+    <string name="toolbar_title">Kisan Network</string>
+    <string name="send_message">Send Message</string>
+    <string name="send">Send</string>
+    <string name="otp_hint">Hi. Your OTP is: 123456</string>
+    <string name="otp_message">Hi. Your OTP is: %s</string>
+    <string name="generic_name">%1$s %2$s</string>
+    <string name="successful_msg">OTP sent successfully for Kisan Network</string>
+    <string name="error_msg">Ooopsss...Its not you. Its us. Try later</string>
+    <string name="no_item_available">No data found.\nIt means no messages sent yet.</string>
+</resources>
