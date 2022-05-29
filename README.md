@@ -7,7 +7,7 @@ Android application which send sms to contacts imported from JSON File.
  
 ### App Screenshot
 
-![App Screenshot](screenshot/AppScreenshot1.png)
+![App Screenshot](screenshot/AppScreenshot1.JPEG)
 
 
 
